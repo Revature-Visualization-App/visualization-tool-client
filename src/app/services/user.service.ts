@@ -24,9 +24,9 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-  // getCategories(): Observable<Category[]>{
-  //   return this.httpClient.get<Category[]>(this.apiURL);
-  // }
+  getUserById(userId:number): Observable<User>{
+    return this.httpClient.get<User>(`/${this.apiURL}/id/${userId}`);
+  }
 
 
   //MAKE SURE MATCHING ENDPOINTS FROM BACKEND
@@ -40,6 +40,8 @@ export class UserService {
     return this.httpClient.post<User>(this.apiURL + 
       '/login', JSON.stringify({email,pass}), this.httpOptions);
   }
+  //MAKE SURE MATCHING ENDPOINTS FROM BACKEND
+
 
   // updateCategory(id: number, bodyObject: object): Observable<Category>{
   //   return this.httpClient.put<Category>(this.apiURL + id, bodyObject, this.httpOptions);
