@@ -7,7 +7,7 @@ import { SkillService } from '../services/skill.service';
 @Component({
   selector: 'app-skill-category-edit',
   templateUrl: './skill-category-edit.component.html',
-  styleUrls: ['./skill-category-edit.component.css']
+  //styleUrls: ['./skill-category-edit.component.css']
 })
 export class SkillCategoryEditComponent implements OnInit {
 
@@ -299,7 +299,8 @@ export class SkillCategoryEditComponent implements OnInit {
   addSkill(): Skill {
     const skillDTO: SkillDTO = {
       name: this.skillNameAdd,
-      category: this.selectedCategory
+      category: this.selectedCategory,
+      userId: Number(localStorage.getItem('userId'))
     };
     let newSkill;
     this.skillService.addSkill(skillDTO).subscribe((response) => {

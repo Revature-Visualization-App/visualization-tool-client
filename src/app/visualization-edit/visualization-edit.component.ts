@@ -9,8 +9,8 @@ import { PrimerService } from '../services/primer.service';
 
 @Component({
   selector: 'app-visualization-edit',
-  templateUrl: './visualization-edit.component.html',
-  styleUrls: ['./visualization-edit.component.css']
+  templateUrl: './visualization-edit.component.html'
+  //styleUrls: ['./visualization-edit.component.css']
 })
 export class VisualizationEditComponent implements OnInit {
 
@@ -38,8 +38,8 @@ export class VisualizationEditComponent implements OnInit {
   curriculumList: Curriculum[] = [];
   selectedCurriculumList: Curriculum[] = [];
 
-  primerList: Primer[] = [];
-  selectedPrimerList: Primer[] = [];
+   primerList: Primer[] = [];
+   selectedPrimerList: Primer[] = [];
 
 
   constructor(private visualizationService: VisualizationService, private curriculumService: CurriculumService) { }
@@ -98,6 +98,9 @@ export class VisualizationEditComponent implements OnInit {
   showDVisual2(){
     this.visibleDVisual2 = true;
   }
+
+
+// ********** VISUAL METHODS **********
 
   getAllVisualization(): void {
     this.visualizationService.getAllVisualizations().subscribe((response) => {
@@ -210,12 +213,12 @@ export class VisualizationEditComponent implements OnInit {
     this.selectedCurriculumList = [];
   }
 
-  resetPrimerActive(): void {
-    for (const primer of this.primerList) {
-      primer.isActive = false;
-    }
-    this.selectedPrimerList = [];
-  }
+  // resetPrimerActive(): void {
+  //   for (const primer of this.primerList) {
+  //     primer.isActive = false;
+  //   }
+  //   this.selectedPrimerList = [];
+  // }
 
   toggleAddVisualization(): void {
     this.showVisualizationDeleteFail = false;

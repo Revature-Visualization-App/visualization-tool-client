@@ -42,6 +42,13 @@ export class IndexComponent implements OnInit {
   visibleDSkills:boolean=true;
   visibleDSkills2:boolean=true;
 
+  visiblePrimers:boolean =true;
+  visiblePrimers2:boolean =true;
+  visibleMPrimers:boolean=true;
+  visibleMPrimers2:boolean=true;
+  visibleDPrimers:boolean=true;
+  visibleDPrimers2:boolean=true;
+
   visibleCatego:boolean =true;
 
   // showhideUtility(){
@@ -84,6 +91,13 @@ visualReset(){
   this.visibleDSkills=false;
   this.visibleDSkills2=false;
 
+  this.visiblePrimers =false;
+  this.visiblePrimers2 =false;
+  this.visibleMPrimers=false;
+  this.visibleMPrimers2=false;
+  this.visibleDPrimers=false;
+  this.visibleDPrimers=false;
+
   this.visibleCatego=false;
 }
 
@@ -119,13 +133,16 @@ showVisual(){
   this.visibleDSkills=false;
   this.visibleDSkills2=false;
 
+  this.visiblePrimers =false;
+  this.visiblePrimers2 =false;
+  this.visibleMPrimers=false;
+  this.visibleMPrimers2=false;
+  this.visibleDPrimers=false;
+  this.visibleDPrimers=false;
+
   this.visibleCatego=false;
-
-
-
-
-
 }
+
 showVisual2(){
   this.visibleVisual2 = true;
 }
@@ -155,7 +172,7 @@ showDVisual2(){
 //Curriculum Manipulators
 showCurric(){
   this.intro =false;
-  this.visibleCurric =true;
+  this.visibleCurric = !this.visibleCurric;
 
   this.visibleVisual=false;
   this.visibleVisual2=false;  
@@ -217,7 +234,7 @@ this.visibleDCurric2 =true;
 //Project Manipulators
 showProject(){
   this.intro =false;
-  this.visibleProject =true;
+  this.visibleProject = !this.visibleProject;
   
   this.visibleVisual=false;
   this.visibleVisual2=false;  
@@ -286,7 +303,7 @@ hideProject() {
 //Skills Manipulators
 showSkills(){
   this.intro =false;
-  this.visibleSkills =true;
+  this.visibleSkills = !this.visibleSkills;
 
   this.visibleVisual=false;
   this.visibleVisual2=false;  
@@ -350,6 +367,32 @@ hideSkills(){
 
 }
 
+//Primers Manipulators
+showPrimers(){
+  this.intro =false;
+  this.visiblePrimers = !this.visiblePrimers;
+  
+  this.visibleVisual=false;
+  this.visibleVisual2=false;  
+  this.visibleMVisual=false;
+  this.visibleMVisual2=false;
+  this.visibleDVisual=false;
+  this.visibleDVisual2=false;
+
+  this.visibleSkills=false;
+  this.visibleSkills2 =false;
+  this.visibleMSkills=false;
+  this.visibleMSkills2=false;
+  this.visibleDSkills=false;
+  this.visibleDSkills2=false;
+
+  this.visiblePrimers =false;
+  this.visiblePrimers2 =false;
+  this.visibleMPrimers=false;
+  this.visibleMPrimers2=false;
+  this.visibleDPrimers=false;
+  this.visibleDPrimers=false;
+}
 
 
 
