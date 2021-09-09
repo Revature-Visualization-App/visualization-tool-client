@@ -236,7 +236,7 @@ showProject2(){
         if (!this.curriculumList[index].isActive) {
           this.selectedProjectList.push(this.projectList[index]);
         } else {
-          this.selectedProjectList = this.selectedProjectList.filter((c) => c.projectId !== currentProjectId);
+          this.selectedProjectList = this.selectedProjectList.filter((p) => p.projectId !== currentProjectId);
         }
         this.projectList[index].isActive = !this.projectList[index].isActive;
       }

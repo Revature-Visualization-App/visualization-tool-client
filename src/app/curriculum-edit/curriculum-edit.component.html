@@ -81,7 +81,7 @@
         <div class="column">
           --Project List--
           <fieldset class="column borders boxcolumn is-6-desktop is-12-mobile">
-            <ul>
+            <ul class="showProjectList">
                 <li *ngFor="let project of projectList; let i = index">
                     <label class="projectLabel" for="project_{{project.projectId}}">
                         <input type="checkbox" id="project_{{project.projectId}}" [value]="project"
