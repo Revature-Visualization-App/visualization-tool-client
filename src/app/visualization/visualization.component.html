@@ -1,9 +1,15 @@
 <div class="container m-5">
     <div class="columns">
-        <fieldset class="column leftColumn is-6-desktop">
+        <div class="column leftColumn is-6-desktop">
+        <fieldset class="curriculaSection row leftColumnRows">
             <legend>Curricula</legend>
             <app-curriculum class="is-full" style="min-width:85%;" [currentCurriculumList]="distinctCurriculumList" (currentCurriculumId)="changeCurriculumEvent($event)"></app-curriculum>
         </fieldset>
+        <fieldset class="primerSection row leftColumnRows">
+            <legend>Primer</legend>
+            <app-primer class="is-full" style="min-width:85%;" [currentPrimerList]="distinctPrimerList" (currentPrimerId)="changePrimerEvent($event)"></app-primer>
+        </fieldset>
+        </div>
         <div class="column rightColumn is-6-desktop">
             <fieldset class="skillSection row rightColumnRows">
                 <legend>Skills</legend>
@@ -15,5 +21,4 @@
             </fieldset>
         </div>
     </div>
-    <app-primer></app-primer>
 </div>

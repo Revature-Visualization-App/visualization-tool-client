@@ -23,6 +23,7 @@ export class VisualizationComponent implements OnInit {
   distinctSkillList: Skill[] = [];
   distinctCategoryList: Category[] = [];
   distinctCurriculumList: Curriculum[] = [];
+  distinctPrimerList: Primer[] = [];
   currentCurriculumId: number;
   currentSkillList: Skill[] = [];
 
@@ -36,8 +37,9 @@ export class VisualizationComponent implements OnInit {
     this.visualizationId = Number(this.route.snapshot.paramMap.get('id'));
     this.visualizationService.getVisualizationById(this.visualizationId).subscribe((response) => {
       this.currentVisualization = response;
-      // this.currentCurriculumList = response.curriculumList;
-      // this.currentPrimerList = response.primerList;
+      console.log(this.currentVisualization);
+       //this.currentCurriculumList = response.curriculumList;
+       //this.currentPrimerList = response.primerList;
       // if (this.currentCurriculumList.length !== 0) {
       //   this.changeCurriculumEvent(this.currentCurriculumList[0].curriculumId);
       // }
@@ -68,22 +70,24 @@ export class VisualizationComponent implements OnInit {
     //     this.categoryColorList.push(this.randColor(idx, total));
     //   }
     // });
+
   }
   changeCurriculumEvent(currentCurriculumId: number): void {
     for (const curriculum of this.currentVisualization.curriculumList){
       if (currentCurriculumId === curriculum.curriculumId){
         this.currentSkillList = curriculum.skillList;
+        console.log(this.currentSkillList);
       }
     }
   }
 
-  // changePrimerEvent(currentPrimerId: number): void {
-  //   for (const primer of this.currentVisualization.primerList){
-  //     if (currentPrimerId === primer.primerId){
-  //       this.currentSkillList = primer.skillList;
-  //     }
-  //   }
-  // }
+   changePrimerEvent(currentPrimerId: number): void {
+     for (const primer of this.currentVisualization.primerList){
+       if (currentPrimerId === primer.primerId){
+        this.currentSkillList = primer.skillList;
+       }
+     }
+   }
 
   randColor(i: number, total: number): string {
     return 'hsl(' + i * total + ', 50%, 75%)';
