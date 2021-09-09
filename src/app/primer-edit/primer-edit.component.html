@@ -10,7 +10,7 @@
         <input type="text" class="input input-shadow" id="name" width="400px" maxlength="32" minlength="3" required>
         </div>
         <div class="column is-narrow">
-        <button type="button" class="button is-info is-rounded" (click)="showPrimer2()">OK</button>
+        <button type="button" class="button is-info is-outlined is-rounded" (click)="showPrimer2()">OK</button>
           </div>
         </div>
   
@@ -32,8 +32,9 @@
               <ul class="showSkillList">
                   <li *ngFor="let skill of skillList; let i = index">
                       <label class="skillLabel" for="skill_{{skill.skillId}}">
-                          <input type="radio" id="skill_{{skill.skillId}}" [value]="skill" name="skillList"
-                              [(ngModel)]="selectedSkill" (change)="displaySkill()" />
+                          <input type="checkbox" id="skill_{{skill.skillId}}" [value]="skill" name="skillList"
+                              [checked]="skill.isActive" 
+                              (change)="toggleSkill(skill.skillId)" />
                           {{ skill.skillName }}
                       </label>
                   </li>

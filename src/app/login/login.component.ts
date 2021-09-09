@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   
   login(): void{
-    console.log(this.email, this.password);
+    //console.log(this.email, this.password);
     this.userService.login(this.email,this.password)
       .subscribe(data=>{this.userService.user = {
         id: data.id,

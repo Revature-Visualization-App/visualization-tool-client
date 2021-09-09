@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
   constructor(private userService:UserService, private router:Router) {}
 
   signUp():void{
-    alert("New Registration Submission Clicked")
+    //alert("New Registration Submission Clicked")
     console.log()
     //if(this.pass === this.confirmPass){
       console.log(this.first, this.last, this.email, this.pass)

@@ -10,7 +10,7 @@ export class NavbarComponent {
   logout():void{
     localStorage.clear();
     sessionStorage.clear();
-    alert("You have been logged out");
+    //alert("You have been logged out");
     
     //logic for logout here
   }
