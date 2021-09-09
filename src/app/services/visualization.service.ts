@@ -43,8 +43,8 @@ export class VisualizationService {
     return this.httpClient.get<Curriculum[]>(`${this.apiURL}${id}`);
   }
 
-  getSkillsById(id: number):  Observable<Skill> {
-    return this.httpClient.get<Skill>(`http://54.221.159.251:8090/skill/${id}`);
+  getSkillsById(id: number):  Observable<Skill[]> {
+    return this.httpClient.get<Skill[]>(`${this.apiURL}${id}`);
   }
 
   getCategoriesById(id: number): Observable<Category[]> {

@@ -35,6 +35,8 @@ export class ProfileComponent implements OnInit {
 
   }
 }
+
+
   showProfile() {
     console.log(this.userId, this.email)
     this.userService.getUserById(this.userId)
