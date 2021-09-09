@@ -14,6 +14,9 @@ export class CurriculumService {
   };
 
   constructor(private httpClient: HttpClient) { }
+  getCurriculumById(curriculumId: number): Observable<Curriculum> {
+    return this.httpClient.get<Curriculum>(`${this.apiURL}/${curriculumId}`);
+  }
 
   getAllCurriculum(): Observable<Curriculum[]> {
     return this.httpClient.get<Curriculum[]>(`${this.apiURL}`);
